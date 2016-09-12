@@ -1,4 +1,7 @@
 .idea/
 .ipynb_checkpoints/
 venv/
+*.pyc
 programming_assignment.txt
+gvk_ml_lib_class.py
+assignment1.py
