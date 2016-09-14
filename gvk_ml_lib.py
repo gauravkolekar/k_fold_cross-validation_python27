@@ -75,4 +75,8 @@ def k_fold_cross_validation(data, k_folds):
 
 
 def get_folded_data(data, value):
-    return data.loc[data['partition_no'] == int(value)]
+    test_data = data.loc[data['partition_no'] == int(value)]
+    test_data.drop('partition_no', axis=1, inplace=True)
+    train_data = data.loc[data['partition_no'] != int(value)]
+    train_data.drop('partition_no', axis=1, inplace=True)
+    return train_data, test_data
